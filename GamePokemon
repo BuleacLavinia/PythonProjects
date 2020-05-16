@@ -14,7 +14,7 @@ class Pokemon:
       knocked = true
     else:
         self.health = 0
-        print(name + " is now respawning is a better place")
+        print(name + " is now respawning in a better place")
 
   def gain_health(self, currHealth, maxHealth):
     if self.health < maxHealth:
