@@ -1,0 +1,30 @@
+import random
+
+gain = 100
+
+def flip(amount, bet, gain):
+  ok = random.randint(1, 2)
+  if ok==1:
+    print("it's Heads! Your guess was: " + bet)
+    if bet == 'Heads':
+     return amount * gain
+    else:
+     return amount / 2
+  else:
+    print("it's Tails! Your guess was: " + bet)
+    if bet == 'Tails':
+     return amount * gain
+    else:
+     return amount / 2
+     
+ok = 1
+
+while (ok == 1) && (amount > 0):
+    amount = int(input('Enter your sum: '))
+    bet = str(input('Enter your side: '))
+    bet = bet.title()
+    newSum = flip(amount, bet, gain)
+    print("Your amount of money is now ",newSum)
+    print("If you want to continue, please enter ok=1, else make ok=0 and quit.")
+    ok = int(input('ok='))
+print("Thank you for playing!")
