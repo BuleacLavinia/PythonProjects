@@ -1,0 +1,27 @@
+class Pokemon:
+  def __init__(self, name, level, kind, maxHealth, currHealth, knocked):
+    self.name = name
+    self.level = level
+    self.kind = kind
+    self.maxHealth = maxHealth
+    self.currHealth = currHealth
+    self.knocked = knocked
+
+  def lose_health(self, name, currHealth, knocked):
+    if self.health > 3:
+      self.health = self.health - 3
+      print("Health has been decreased with 3 units! Now it's " + self.health)
+      knocked = true
+    else:
+        self.health = 0
+        print(name + " is now respawning is a better place")
+
+  def gain_health(self, currHealth, maxHealth):
+    if self.health < maxHealth:
+      self.health = self.health + 1
+    print("Health has been decreased with 1 unit! Now it's " + self.health)
+
+  def gain_level(self, name, currHealth, maxHealth, level):
+    if currHealth == maxHealth:
+      level += 1
+      print(name + " has evolved to level " + level + "!")
