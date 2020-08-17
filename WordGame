@@ -1,0 +1,33 @@
+import random
+listOfWords = ["error", "introduce", "spy","glorious","acoustic","crime","glib","curved","loutish","step","eminent", "amount","obtainable","truck","summer","available","afternoon","admire" "hug","wacky","key","crowded", "hideous","town","heartbreaking","fish","flavor","gaudy","shaky","time","melted","radiate","reflective","save","route","gleaming","structure","seal","gifted","fasten","ambitious","slimy","attract","escape","fumbling","real","lyrical","riddle","plan","brake"]
+print("Welcome!")
+userName = input("What's your name?\n I'm ")
+print("Hello, " + userName + "!I'll give you a few letters, and I'll want you to guess the word for me.")
+point = 10
+randomNumber = random.randint(0,50)
+print("Your letters are.. hmm...\n")
+shuffled = list(listOfWords[randomNumber])
+random.shuffle(shuffled)
+shuffled = ''.join(shuffled)
+print(shuffled)
+print("Okay!")
+guess = input("Take a guess! -> ")
+while (point > 0) or (point < 101) :
+  if guess == listOfWords[randomNumber] : 
+    print("Correct! +4 points")
+    point += 4
+  else:
+    print("Oops! Try again, -1 points")
+    point += -1 
+  randomNumber = random.randint(0,50)
+  shuffled = list(listOfWords[randomNumber])
+  print("Okay!")
+  random.shuffle(shuffled)
+  shuffled = ''.join(shuffled)
+  print("Your letters are.. hmm...\n")
+  print(shuffled)
+  guess = input("Take a guess! -> ")
+if point <= 0:
+  print("L O S T")
+else:
+  print("Y O U   W I N")
